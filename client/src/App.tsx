@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header';
 import InputSection from './components/InputSection';
 import ResultsSection from './components/ResultsSection';
-import AdminPanel from './components/AdminPanel';
+import StaticAdminPanel from './components/StaticAdminPanel';
 import { InputData, AnalysisResult } from './types';
-import { apiService } from './services/api';
+import SettingAnalyzer from './services/analyzer';
+import { mockParameters } from './data/mockData';
 import './App.css';
 
 function MainPage() {
@@ -44,7 +45,9 @@ function MainPage() {
       setError(null);
 
       try {
-        const analysisResult = await apiService.analyzeSettings('モンキーターンV', inputData);
+        // GitHub Pagesでは静的サイトなので、クライアントサイドで解析を実行
+        const analyzer = new SettingAnalyzer(mockParameters);
+        const analysisResult = analyzer.calculateSettingProbabilities(inputData);
         setResults(analysisResult);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : '解析中にエラーが発生しました';
@@ -100,7 +103,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/admin" element={<StaticAdminPanel />} />
           </Routes>
         </main>
 
