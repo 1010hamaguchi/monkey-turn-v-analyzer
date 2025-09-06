@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/monkey-turn-v-analyzer/static/css/main.0c93a843.css",
+    "main.js": "/monkey-turn-v-analyzer/static/js/main.b2214eb7.js",
+    "static/js/453.ef0ad83f.chunk.js": "/monkey-turn-v-analyzer/static/js/453.ef0ad83f.chunk.js",
+    "index.html": "/monkey-turn-v-analyzer/index.html",
+    "main.0c93a843.css.map": "/monkey-turn-v-analyzer/static/css/main.0c93a843.css.map",
+    "main.b2214eb7.js.map": "/monkey-turn-v-analyzer/static/js/main.b2214eb7.js.map",
+    "453.ef0ad83f.chunk.js.map": "/monkey-turn-v-analyzer/static/js/453.ef0ad83f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c93a843.css",
+    "static/js/main.b2214eb7.js"
+  ]
+}
